@@ -84,18 +84,13 @@ namespace POS.Core.Tests.describe_BarcodeHandler
 
         void when_a_listed_barcode_ends_with_multiple_carriage_returns_and_a_newlines()
         {
-            it["will display the item price"] = () =>
+            beforeEach = () =>
             {
-                Dictionary<string, decimal> productList = new Dictionary<string, decimal>()
-                {
-                    {"852465", 6.45m }
-                };
-                BarcodeHandler handler = new BarcodeHandler(productList);
-
-                handler.OnBarcode("852465\r\n\r\n\r\n\n\n\n\r\r\r\r");
-
-                handler.Message.Should().Be("$6.45");
+                productList.Add("852465", 6.45m);
+                barcode = "852465\r\n\r\n\r\n\n\n\n\r\r\r\r";
             };
+
+            it["will display the item price"] = () => handler.Message.Should().Be("$6.45");
         }
     }
 }
