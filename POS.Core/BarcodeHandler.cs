@@ -13,7 +13,7 @@ namespace POS.Core
 
         public BarcodeHandler(IDictionary<string, decimal> productList)
         {
-            this.productList = productList;
+            this.productList = productList ?? throw new ArgumentNullException(nameof(productList));
         }
 
         public void OnBarcode(string barcode)

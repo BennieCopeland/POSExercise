@@ -9,7 +9,7 @@
 - ~~value not in the list of products~~
 - ~~value found in product list~~
 - ~~value missing terminator~~
-- null product list
+- ~~null product list~~
 - ~~value ends in newline~~
 - ~~value ends in carriage return~~
 - ~~value ends in carriage return and newline~~
