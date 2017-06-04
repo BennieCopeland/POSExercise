@@ -10,7 +10,7 @@ namespace POS.Core
     {
         public void OnBarcode(string barcode)
         {
-            if (barcode == null)
+            if (string.IsNullOrEmpty(barcode))
             {
                 Message = "Error";
             }

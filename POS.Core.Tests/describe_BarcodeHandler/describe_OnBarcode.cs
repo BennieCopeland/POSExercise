@@ -20,5 +20,17 @@ namespace POS.Core.Tests.describe_BarcodeHandler
                 handler.Message.Should().Be("Error");
             };
         }
+
+        void when_the_string_empty()
+        {
+            it["will display an error message"] = () =>
+            {
+                BarcodeHandler handler = new BarcodeHandler();
+
+                handler.OnBarcode(string.Empty);
+
+                handler.Message.Should().Be("Error");
+            };
+        }
     }
 }
