@@ -61,12 +61,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DebuggerShim.cs" />
+    <Compile Include="describe_BarcodeHandler\_describe_BarcodeHandler.cs" />
+    <Compile Include="describe_BarcodeHandler\describe_OnBarcode.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\POS.Core\POS.Core.csproj">
+      <Project>{692fd75d-afb6-46b1-84c5-576d8c2276db}</Project>
+      <Name>POS.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
