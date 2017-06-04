@@ -12,3 +12,4 @@
 - null product list
 - ~~value ends in newline~~
 - ~~value ends in carriage return~~
+- ~~value ends in carriage return and newline~~
