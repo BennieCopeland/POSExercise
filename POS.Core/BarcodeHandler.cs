@@ -26,16 +26,6 @@ namespace POS.Core
 
             barcode = barcode.TrimEnd(new char[] { '\n', '\r' });
 
-            if (barcode.EndsWith("\n"))
-            {
-                barcode = barcode.TrimEnd('\n');
-            }
-
-            if (barcode.EndsWith("\r"))
-            {
-                barcode = barcode.TrimEnd('\r');
-            }
-
             if(productList.TryGetValue(barcode, out decimal price))
             {
                 Message = $"${price.ToString()}";
