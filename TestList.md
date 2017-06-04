@@ -13,3 +13,4 @@
 - ~~value ends in newline~~
 - ~~value ends in carriage return~~
 - ~~value ends in carriage return and newline~~
+- ~~value ends in multiple carriage returns and newlines~~

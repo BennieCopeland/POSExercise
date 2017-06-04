@@ -24,6 +24,8 @@ namespace POS.Core
                 return;
             }
 
+            barcode = barcode.TrimEnd(new char[] { '\n', '\r' });
+
             if (barcode.EndsWith("\n"))
             {
                 barcode = barcode.TrimEnd('\n');
