@@ -9,7 +9,7 @@ namespace POS.Core.Tests.describe_BarcodeHandler
 {
     class describe_OnBarcode : _describe_BarcodeHandler
     {
-        void when_the_string_is_null()
+        void when_the_barcode_is_null()
         {
             it["will display an error message"] = () =>
             {
@@ -21,7 +21,7 @@ namespace POS.Core.Tests.describe_BarcodeHandler
             };
         }
 
-        void when_the_string_empty()
+        void when_the_barcode_is_empty()
         {
             it["will display an error message"] = () =>
             {
