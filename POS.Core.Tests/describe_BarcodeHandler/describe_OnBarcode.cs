@@ -33,15 +33,9 @@ namespace POS.Core.Tests.describe_BarcodeHandler
 
         void when_the_barcode_is_empty()
         {
-            it["will display an error message"] = () =>
-            {
-                Dictionary<string, decimal> productList = new Dictionary<string, decimal>();
-                BarcodeHandler handler = new BarcodeHandler(productList);
+            beforeEach = () => barcode = string.Empty;
 
-                handler.OnBarcode(string.Empty);
-
-                handler.Message.Should().Be("Error");
-            };
+            it["will display an error message"] = () => handler.Message.Should().Be("Error");
         }
 
         void when_a_listed_barcode_has_no_terminator()
