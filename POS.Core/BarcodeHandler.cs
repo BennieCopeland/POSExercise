@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace POS.Core
 {
     public class BarcodeHandler
@@ -21,6 +22,11 @@ namespace POS.Core
             {
                 Message = "Error";
                 return;
+            }
+
+            if (barcode.EndsWith("\n"))
+            {
+                barcode = barcode.TrimEnd('\n');
             }
 
             if(productList.TryGetValue(barcode, out decimal price))
