@@ -11,3 +11,4 @@
 - ~~value missing terminator~~
 - null product list
 - ~~value ends in newline~~
+- ~~value ends in carriage return~~

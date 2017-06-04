@@ -66,5 +66,21 @@ namespace POS.Core.Tests.describe_BarcodeHandler
                 handler.Message.Should().Be("$3.66");
             };
         }
+
+        void when_a_listed_barcode_ends_with_a_carriage_return()
+        {
+            it["will display the item price"] = () =>
+            {
+                Dictionary<string, decimal> productList = new Dictionary<string, decimal>()
+                {
+                    {"134679", 5.48m }
+                };
+                BarcodeHandler handler = new BarcodeHandler(productList);
+
+                handler.OnBarcode("134679\r");
+
+                handler.Message.Should().Be("$5.48");
+            };
+        }
     }
 }
