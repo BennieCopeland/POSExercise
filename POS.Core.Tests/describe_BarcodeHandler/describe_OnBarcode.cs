@@ -9,17 +9,26 @@ namespace POS.Core.Tests.describe_BarcodeHandler
 {
     class describe_OnBarcode : _describe_BarcodeHandler
     {
+        Dictionary<string, decimal> productList = null;
+        BarcodeHandler handler = null;
+        string barcode = null;
+
+        void before_each()
+        {
+            productList = new Dictionary<string, decimal>();
+            handler = new BarcodeHandler(productList);
+        }
+
+        void act_each()
+        {
+            handler.OnBarcode(barcode);
+        }
+
         void when_the_barcode_is_null()
         {
-            it["will display an error message"] = () =>
-            {
-                Dictionary<string, decimal> productList = new Dictionary<string, decimal>();
-                BarcodeHandler handler = new BarcodeHandler(productList);
+            beforeEach = () => barcode = null;
 
-                handler.OnBarcode(null);
-
-                handler.Message.Should().Be("Error");
-            };
+            it["will display an error message"] = () => handler.Message.Should().Be("Error");
         }
 
         void when_the_barcode_is_empty()
