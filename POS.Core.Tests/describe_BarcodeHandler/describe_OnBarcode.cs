@@ -92,5 +92,15 @@ namespace POS.Core.Tests.describe_BarcodeHandler
 
             it["will display the item price"] = () => handler.Message.Should().Be("$6.45");
         }
+
+        void when_a_barcode_is_not_listed_in_the_products()
+        {
+            beforeEach = () =>
+            {
+                barcode = "235694\r\n";
+            };
+
+            it["will display Not Found"] = () => handler.Message.Should().Be("Not Found");
+        }
     }
 }

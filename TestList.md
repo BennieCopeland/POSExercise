@@ -6,7 +6,7 @@
 - value is too short
 - value is too long
 - value contains invalid characters
-- value not in the list of products
+- ~~value not in the list of products~~
 - ~~value found in product list~~
 - ~~value missing terminator~~
 - null product list

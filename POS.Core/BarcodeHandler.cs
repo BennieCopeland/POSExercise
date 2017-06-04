@@ -30,6 +30,10 @@ namespace POS.Core
             {
                 Message = $"${price.ToString()}";
             }
+            else
+            {
+                Message = "Not Found";
+            }
         }
 
         public string Message
