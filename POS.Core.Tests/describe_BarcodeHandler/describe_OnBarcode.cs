@@ -13,7 +13,8 @@ namespace POS.Core.Tests.describe_BarcodeHandler
         {
             it["will display an error message"] = () =>
             {
-                BarcodeHandler handler = new BarcodeHandler();
+                Dictionary<string, decimal> productList = new Dictionary<string, decimal>();
+                BarcodeHandler handler = new BarcodeHandler(productList);
 
                 handler.OnBarcode(null);
 
@@ -25,11 +26,28 @@ namespace POS.Core.Tests.describe_BarcodeHandler
         {
             it["will display an error message"] = () =>
             {
-                BarcodeHandler handler = new BarcodeHandler();
+                Dictionary<string, decimal> productList = new Dictionary<string, decimal>();
+                BarcodeHandler handler = new BarcodeHandler(productList);
 
                 handler.OnBarcode(string.Empty);
 
                 handler.Message.Should().Be("Error");
+            };
+        }
+
+        void when_a_listed_barcode_has_no_terminator()
+        {
+            it["will display the item price"] = () =>
+            {
+                Dictionary<string, decimal> productList = new Dictionary<string, decimal>()
+                {
+                    {"67890", 10.75m }
+                };
+                BarcodeHandler handler = new BarcodeHandler(productList);
+
+                handler.OnBarcode("67890");
+
+                handler.Message.Should().Be("$10.75");
             };
         }
     }

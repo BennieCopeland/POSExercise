@@ -8,3 +8,4 @@
 - value contains invalid characters
 - value not in the list of products
 - value found in product list
+- ~~value missing terminator~~
