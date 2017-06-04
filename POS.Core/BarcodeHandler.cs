@@ -20,6 +20,7 @@ namespace POS.Core
             if (string.IsNullOrEmpty(barcode))
             {
                 Message = "Error";
+                return;
             }
 
             if(productList.TryGetValue(barcode, out decimal price))
